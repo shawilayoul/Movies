@@ -34,24 +34,27 @@ class MovieFormType extends AbstractType
                     'placeholder' => 'Enter release year'
                 ),
             ])
-            ->add('description', TextType::class,[
+            ->add('description', TextType::class, [
                 'attr' => array(
                     'class' => 'bg-transparent block border-b-2 w-full h-20 text-6xl outline-none',
                     'placeholder' => 'Enter description'
                 ),
                 'label' => false
             ])
-            ->add('image_path', FileType::class,[
+            ->add('image_path', FileType::class, [
                 'attr' => array(
-                    'class' => 'py-10'
+                    'class' => 'py-10',
+                    'data_class' => null,
+                    'required' => false
                 ),
-                'label'=> false
+                'label' => false
             ])
             ->add('save', SubmitType::class, [
                 'attr' => array(
-                    'class' => 'bg-black text-white py-2 px-4 '
+                    'class' => 'uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl '
                 ),
-                'label' => 'Create Task']);
+                'label' => 'Create Task'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
